@@ -1,13 +1,85 @@
+
+{% load static %}
+
 <!DOCTYPE html> 
+
 <html>
 <head>
 
 </head>
-    <title>Programa</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=">
+    <title>Anuncios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
+
 <body>
-    <p>
-        Oi
-    </p>
+
+<div class="ui attached menu">
+    <div class="ui container">  
+        <a class="item">Anuncios</a>
+        <div class="right menu">
+            <div class="ui right aligned search item">
+                <div class="ui transparent icon input">
+                  <input class="prompt" type="text" placeholder="Procurar...">
+                  <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+              </div>
+
+        </div>
+    </div>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui container">
+<div class="ui stackable grid">
+        <div class="four wide column">
+            <div class="ui vertical fluid menu">
+              {% for categoria in categorias %}
+                <a class="item">
+                  {{ categoria }}
+                </a>
+              {% endfor %}
+                  
+              </div>
+        </div>
+       
+        <div class="twelve wide column">
+            
+            <div class="ui three column stackable grid">
+                <div class="column"> 
+                    <div class="ui fluid card">
+                        <div class="image">
+                          <img src="{% static 'anuncios/img/image.png' %}">
+                        </div>
+                        <div class="content">
+                          <a class="header">Carro</a>
+                        </div>
+                        <div class="extra content">
+                            R$ 22,00
+                        </div>
+                        </div>
+
+                </div>
+                <div class="column"> 
+                    <div class="ui fluid card">
+                        <div class="image">
+                            <img src="{% static 'anuncios/img/image.png' %}">
+                        </div>
+                        <div class="content">
+                          <a class="header">Carro 2</a>
+                        </div>
+                        <div class="extra content">
+                            R$ 23,00
+                        </div>
+                        </div>
+
+                </div>
+            
+            </div>
+
+</div>
+</div>
+
 </body>
 
 </html>
