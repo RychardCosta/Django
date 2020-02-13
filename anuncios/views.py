@@ -31,3 +31,11 @@ def categoria(request, categoria_id):
         'anuncios': Anuncios,
         'categoria': categoria,
     })
+
+def anuncio(request, anuncio_id):
+    anuncio = get_object_or_404(Anuncio, id=anuncio_id)
+
+    categorias = Categoria.objects.all()
+
+    return render(request, 'anuncio.html', {'categorias': categorias,
+                                         'anuncio': anuncio})
